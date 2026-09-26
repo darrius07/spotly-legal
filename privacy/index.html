@@ -101,19 +101,40 @@
       <ul>
         <li><strong>Supabase</strong> : authentification, base de données, fonctions serveur, stockage des avatars.</li>
         <li><strong>Cloudflare Stream</strong> : envoi, traitement et diffusion des vidéos.</li>
-        <li><strong>Google Places / Google Maps Platform</strong> : recherche et informations sur les lieux. Les lieux affichés proviennent de Google ; ta position peut leur être transmise comme indiqué plus haut. Voir la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a> et les <a href="https://cloud.google.com/maps-platform/terms">conditions de Google Maps Platform</a>.</li>
+        <li><strong>Google Places / Google Maps Platform</strong> : recherche et informations sur les lieux. Les lieux affichés proviennent de Google ; ta position peut leur être transmise comme indiqué plus haut. Spotly conserve uniquement l’identifiant Google du lieu associé à un Spot ; le nom du lieu est récupéré auprès de Google au moment de l’affichage, et les coordonnées du lieu ne sont conservées que 30 jours au maximum (classement par distance). Voir la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a> et les <a href="https://cloud.google.com/maps-platform/terms">conditions de Google Maps Platform</a>.</li>
         <li><strong>PostHog</strong> : mesure d’audience produit (voir ci-dessus).</li>
       </ul>
       <p>Les échanges entre l’application et ces services sont chiffrés (HTTPS).</p>
 
       <h2>Conservation et suppression</h2>
       <p>
-        Tu peux supprimer ton compte depuis l’application : Profil → Supprimer mon compte. La suppression efface immédiatement ton compte
-        d’authentification, ton profil et les données rattachées dans notre base de données (Spots, likes, sauvegardes, follows, signalements,
-        blocages, statistiques). À ce jour, les fichiers vidéo hébergés par Cloudflare Stream et l’image d’avatar stockée par Supabase ne sont
-        <strong>pas supprimés automatiquement</strong> : ils ne sont plus affichés dans Spotly, et tu peux demander leur effacement en écrivant à
-        <a href="mailto:darriodarrius@gmail.com">darriodarrius@gmail.com</a> depuis l’adresse email de ton compte. Les événements déjà reçus par PostHog restent
-        associés à un identifiant interne qui ne correspond plus à aucun compte.
+        Tu peux supprimer ton compte depuis l’application : Profil → Supprimer mon compte (confirmation en deux étapes).
+        La suppression est immédiate et définitive :
+      </p>
+      <ul>
+        <li><strong>Vidéos :</strong> les fichiers vidéo de tes Spots sont supprimés de Cloudflare Stream.</li>
+        <li><strong>Avatar :</strong> ta photo de profil est supprimée du stockage Supabase.</li>
+        <li><strong>Base de données :</strong> ton profil et les données rattachées sont supprimés (Spots, likes, sauvegardes, follows,
+          blocages, signalements que tu as envoyés, données de lecture et statistiques, acceptations des règles). Les likes, sauvegardes et
+          statistiques d’autres utilisateurs portant sur tes Spots disparaissent avec eux. Si tu avais pris une décision de modération,
+          elle reste enregistrée sans ton identité.</li>
+        <li><strong>Compte d’authentification :</strong> ton email et ton mot de passe sont supprimés ; il n’est plus possible de se connecter à ce compte.</li>
+      </ul>
+      <p>
+        Les données des autres utilisateurs (leurs comptes, leurs Spots) ne sont jamais supprimées par cette action. Si une étape échoue
+        (par exemple une panne temporaire d’un prestataire), ton compte reste actif et tu peux relancer la suppression : elle reprend là
+        où elle s’est arrêtée.
+      </p>
+      <p>
+        <strong>PostHog :</strong> les événements d’usage déjà reçus par PostHog ne sont <strong>pas encore supprimés automatiquement</strong>.
+        Lors de la suppression, seul ton identifiant interne de compte (un identifiant technique, sans email ni nom) est conservé dans une liste
+        de demandes d’effacement en attente, uniquement pour permettre de supprimer ensuite ces événements chez PostHog ; il est retiré de
+        cette liste dès que la demande est transmise à PostHog. Tu peux demander cet effacement à tout moment en écrivant à
+        <a href="mailto:darriodarrius@gmail.com">darriodarrius@gmail.com</a>.
+      </p>
+      <p>
+        Les copies techniques éventuellement conservées par nos prestataires (journaux, sauvegardes) sont effacées selon leurs propres
+        durées de conservation.
       </p>
 
       <h2>Tes droits</h2>

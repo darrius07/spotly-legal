@@ -19,10 +19,23 @@
         <li>Choisis « Supprimer mon compte »</li>
         <li>Confirme l’action</li>
       </ol>
+      <p>La suppression est immédiate et définitive. Elle efface :</p>
+      <ul>
+        <li>les fichiers vidéo de tes Spots (Cloudflare Stream) ;</li>
+        <li>ta photo de profil (stockage Supabase) ;</li>
+        <li>ton profil et les données rattachées dans notre base (Spots, likes, sauvegardes, follows, blocages, signalements envoyés,
+          données de lecture et statistiques, acceptations des règles) ;</li>
+        <li>ton compte d’authentification (email et mot de passe) : la connexion n’est plus possible.</li>
+      </ul>
       <p>
-        La suppression efface ton compte, ton profil et les données rattachées dans notre base. Les fichiers vidéo et l’avatar
-        ne sont pas supprimés automatiquement : pour demander leur effacement, écris à
-        <a href="mailto:darriodarrius@gmail.com">darriodarrius@gmail.com</a> depuis l’adresse email de ton compte.
+        Aucune donnée d’un autre utilisateur n’est supprimée. Si une étape échoue, ton compte reste actif : relance simplement la
+        suppression, elle reprend là où elle s’est arrêtée.
+      </p>
+      <p>
+        Les événements d’usage déjà envoyés à PostHog (mesure d’audience) ne sont pas encore supprimés automatiquement : ton
+        identifiant interne de compte est conservé dans une liste d’effacement en attente, uniquement pour pouvoir les supprimer
+        ensuite. Tu peux aussi demander cet effacement à
+        <a href="mailto:darriodarrius@gmail.com">darriodarrius@gmail.com</a>.
         Détails dans la <a href="/privacy">politique de confidentialité</a>.
       </p>
       <p>
