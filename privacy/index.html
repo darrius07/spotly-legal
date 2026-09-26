@@ -3,50 +3,123 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotly — Privacy Policy</title>
+    <title>Spotly — Politique de confidentialité</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="wrap">
       <p class="brand"><a href="/">Spotly</a></p>
-      <h1>Privacy Policy</h1>
-      <p class="muted">Dernière mise à jour : 5 septembre 2026</p>
+      <h1>Politique de confidentialité</h1>
+      <p class="muted">Dernière mise à jour : 26 septembre 2026</p>
       <p>
-        Spotly (« nous ») fournit une application mobile de découverte locale par vidéos courtes.
-        Cette politique décrit les données traitées pour la V1.
+        Spotly est une application mobile de découverte de lieux par vidéos courtes. Cette politique
+        explique quelles données Spotly traite, pourquoi, avec quels prestataires, et comment tu peux
+        les faire supprimer. Pour toute question : <a href="mailto:support@spotly.app">support@spotly.app</a>.
       </p>
-      <h2>Données collectées</h2>
+
+      <h2>Âge minimum</h2>
+      <p>
+        Spotly est réservée aux personnes de <strong>18 ans et plus</strong>. L’application n’est pas destinée
+        aux enfants ni aux mineurs.
+      </p>
+
+      <h2>Données de compte</h2>
       <ul>
-        <li>Compte : email d’authentification, username, display name, bio, ville (optionnels).</li>
-        <li>Contenu UGC : vidéos Spotly Camera, métadonnées de lieu, badges de vérification on-site.</li>
-        <li>Interactions : likes, saves, follows, reports, blocks.</li>
-        <li>Localisation : position approximative au moment de l’usage (foreground only), pour nearby/feed.</li>
-        <li>Technique : identifiants appareil/analytics agrégés via PostHog si activé.</li>
+        <li>Adresse email et mot de passe (gérés par notre service d’authentification, Supabase). Le mot de passe n’est jamais lisible par Spotly.</li>
+        <li>Nom d’utilisateur (username), nom affiché, et, si tu les renseignes, bio et ville.</li>
+        <li>Avatar (photo de profil) : facultatif.</li>
+        <li>Identifiant interne de compte (user ID) et acceptation des conditions et des règles communautaires.</li>
       </ul>
-      <h2>Ce que nous ne collectons pas</h2>
+
+      <h2>Photothèque et avatar</h2>
+      <p>
+        Spotly n’accède à ta photothèque que si tu choisis toi-même une photo de profil. Il n’est pas possible
+        d’importer des vidéos depuis la galerie : les Spots sont filmés uniquement avec Spotly Camera.
+      </p>
+
+      <h2>Vidéos (Spots), caméra et micro</h2>
       <ul>
-        <li>Pas d’import galerie pour publication.</li>
+        <li>Un Spot est une vidéo de 5 à 20 secondes filmée avec Spotly Camera (caméra et micro, avec le son d’origine), rattachée à un lieu réel.</li>
+        <li>Les vidéos sont envoyées puis diffusées par <strong>Cloudflare Stream</strong>. Les métadonnées du Spot (lieu associé, date, créateur) sont stockées dans notre base de données <strong>Supabase</strong>.</li>
+        <li>Les Spots sont visibles par les autres utilisateurs de Spotly.</li>
+      </ul>
+
+      <h2>Localisation</h2>
+      <p>
+        Spotly demande l’autorisation d’accéder à ta localisation <strong>précise et approximative</strong>,
+        uniquement <strong>pendant que l’application est utilisée</strong> (jamais en arrière-plan, pas de suivi de trajet,
+        pas d’historique de position). Tu peux refuser : l’application reste utilisable, avec moins de contenu local.
+      </p>
+      <ul>
+        <li><strong>Feed et découverte locale :</strong> ta position est envoyée à nos serveurs (Supabase) pour classer les Spots selon leur distance. Nous ne l’enregistrons pas dans notre base de données.</li>
+        <li><strong>Lieux à proximité, recherche et fiches de lieux :</strong> ta position est transmise, via nos serveurs, à <strong>Google Places (Google Maps Platform)</strong> afin d’obtenir les lieux autour de toi, les résultats de recherche et les détails d’un lieu.</li>
+        <li><strong>Proximité vérifiée :</strong> au moment où tu filmes un Spot, ta position est comparée à celle du lieu, sur ton appareil. Si ta position est récente, précise et très proche du lieu, le Spot reçoit le signal « Proximité vérifiée ». Ce signal ne prouve ni une visite, ni une présence à l’intérieur du lieu, ni un achat. Nous ne conservons pas la latitude et la longitude brutes de ta position pour cette vérification ; seule la <strong>distance au lieu</strong> est conservée, et uniquement lorsque la proximité est validée. Certains Spots créés avant le 26 septembre 2026 peuvent avoir conservé une distance selon une règle antérieure.</li>
+        <li>Les prestataires cités ci-dessous peuvent traiter ces données dans leurs journaux techniques selon leurs propres règles.</li>
+      </ul>
+
+      <h2>Activité dans l’application et statistiques créateur</h2>
+      <p>
+        Spotly enregistre tes interactions : likes, sauvegardes, follows, ouvertures de fiches de lieux, ouvertures du
+        partage, demandes d’itinéraire, signalements et blocages. Pour chaque Spot regardé, nous enregistrons des
+        données de lecture : lecture d’au moins 2 secondes, lecture engagée, lecture complète, relecture et temps de visionnage.
+        Ces données servent à faire fonctionner l’application et à fournir aux créateurs des <strong>statistiques (Creator Analytics)</strong>,
+        présentées sous forme de chiffres. Une demande d’itinéraire est une intention : elle ne prouve pas une visite.
+      </p>
+
+      <h2>Mesure d’audience produit (PostHog)</h2>
+      <p>
+        Spotly utilise <strong>PostHog</strong> (hébergement dans l’Union européenne) pour comprendre l’usage du produit et l’améliorer.
+        Cet outil est <strong>actif</strong> dans l’application. Il reçoit ton identifiant interne de compte (user ID), le nom de l’événement
+        (par exemple ouverture du feed, lecture d’un Spot, like, sauvegarde, ouverture d’un lieu, demande d’itinéraire, utilisation de la caméra,
+        publication, signalement), des identifiants techniques de Spot, de lieu ou de créateur, et l’horodatage. PostHog peut aussi traiter ton adresse IP
+        lors de la réception des événements. Nous n’envoyons à PostHog ni ton email, ni ta position, ni tes vidéos. Ces données servent uniquement à la mesure
+        d’usage du produit, pas à la publicité.
+      </p>
+
+      <h2>Modération et sécurité</h2>
+      <p>
+        Tu peux signaler un Spot ou un utilisateur, et bloquer un utilisateur. Les signalements, les blocages et les décisions de modération
+        (masquage ou retrait d’un contenu, suspension d’un compte) sont enregistrés et examinés par l’équipe Spotly.
+      </p>
+
+      <h2>Ce que Spotly ne fait pas</h2>
+      <ul>
+        <li>Pas de publicité et pas d’identifiant publicitaire.</li>
+        <li>Pas de vente de tes données.</li>
+        <li>Pas d’accès à tes contacts.</li>
         <li>Pas de localisation en arrière-plan.</li>
-        <li>Pas de tracking publicitaire tiers inutile.</li>
+        <li>Pas d’import de vidéos depuis la galerie.</li>
       </ul>
-      <h2>Finalités</h2>
+
+      <h2>Prestataires</h2>
+      <ul>
+        <li><strong>Supabase</strong> : authentification, base de données, fonctions serveur, stockage des avatars.</li>
+        <li><strong>Cloudflare Stream</strong> : envoi, traitement et diffusion des vidéos.</li>
+        <li><strong>Google Places / Google Maps Platform</strong> : recherche et informations sur les lieux. Les lieux affichés proviennent de Google ; ta position peut leur être transmise comme indiqué plus haut. Voir la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a> et les <a href="https://cloud.google.com/maps-platform/terms">conditions de Google Maps Platform</a>.</li>
+        <li><strong>PostHog</strong> : mesure d’audience produit (voir ci-dessus).</li>
+      </ul>
+      <p>Les échanges entre l’application et ces services sont chiffrés (HTTPS).</p>
+
+      <h2>Conservation et suppression</h2>
       <p>
-        Fournir le service Spotly (auth, lieux, publication, feed, social, modération, sécurité),
-        mesurer l’usage produit, et respecter les obligations légales.
+        Tu peux supprimer ton compte depuis l’application : Profil → Supprimer mon compte. La suppression efface immédiatement ton compte
+        d’authentification, ton profil et les données rattachées dans notre base de données (Spots, likes, sauvegardes, follows, signalements,
+        blocages, statistiques). À ce jour, les fichiers vidéo hébergés par Cloudflare Stream et l’image d’avatar stockée par Supabase ne sont
+        <strong>pas supprimés automatiquement</strong> : ils ne sont plus affichés dans Spotly, et tu peux demander leur effacement en écrivant à
+        <a href="mailto:support@spotly.app">support@spotly.app</a> depuis l’adresse email de ton compte. Les événements déjà reçus par PostHog restent
+        associés à un identifiant interne qui ne correspond plus à aucun compte.
       </p>
-      <h2>Partage</h2>
+
+      <h2>Tes droits</h2>
       <p>
-        Prestataires techniques : Supabase (auth/DB), Cloudflare Stream (vidéo), Google Places (lieux),
-        PostHog (analytics produit si configuré), Expo/EAS (distribution builds).
+        Tu peux demander l’accès à tes données, leur correction ou leur suppression, en écrivant à
+        <a href="mailto:support@spotly.app">support@spotly.app</a>. Si tu es dans l’Union européenne, tu peux aussi saisir l’autorité de
+        protection des données de ton pays (en France, la CNIL).
       </p>
-      <h2>Conservation & suppression</h2>
-      <p>
-        Tu peux supprimer ton compte depuis l’app (Profil → Supprimer mon compte). Cela purge le profil
-        Spotly et les données associées, puis le compte d’authentification.
-      </p>
+
       <h2>Contact</h2>
       <p>Support : <a href="mailto:support@spotly.app">support@spotly.app</a></p>
-      <p><a href="/terms">Terms</a> · <a href="/community">Community</a> · <a href="/support">Support</a></p>
+      <p><a href="/terms">Conditions d’utilisation</a> · <a href="/community">Règles de la communauté</a> · <a href="/support">Support</a> · <a href="/delete-account">Supprimer mon compte</a></p>
     </main>
   </body>
 </html>
