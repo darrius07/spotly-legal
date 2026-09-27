@@ -126,11 +126,13 @@
         où elle s’est arrêtée.
       </p>
       <p>
-        <strong>PostHog :</strong> les événements d’usage déjà reçus par PostHog ne sont <strong>pas encore supprimés automatiquement</strong>.
-        Lors de la suppression, seul ton identifiant interne de compte (un identifiant technique, sans email ni nom) est conservé dans une liste
-        de demandes d’effacement en attente, uniquement pour permettre de supprimer ensuite ces événements chez PostHog ; il est retiré de
-        cette liste dès que la demande est transmise à PostHog. Tu peux demander cet effacement à tout moment en écrivant à
-        <a href="mailto:darriodarrius@gmail.com">darriodarrius@gmail.com</a>.
+        <strong>Mesure d’audience (PostHog) :</strong> lors de la suppression de ton compte, Spotly transmet automatiquement à PostHog une
+        demande d’effacement liée à ton identifiant interne de compte, portant sur ton profil analytique, les événements d’usage et les
+        éventuels enregistrements de session associés. PostHog traite cette demande de manière <strong>asynchrone</strong> : la disparition
+        de ces données n’est donc pas instantanée et dépend du traitement de PostHog. Si PostHog est temporairement indisponible, la
+        suppression de ton compte Spotly n’est pas bloquée : ton identifiant interne (un identifiant technique, sans email ni nom) est
+        conservé dans une liste de demandes en attente, uniquement pour renvoyer ultérieurement la demande d’effacement, puis retiré de
+        cette liste dès que PostHog l’a acceptée. Pour toute question : <a href="mailto:darriodarrius@gmail.com">darriodarrius@gmail.com</a>.
       </p>
       <p>
         Les copies techniques éventuellement conservées par nos prestataires (journaux, sauvegardes) sont effacées selon leurs propres

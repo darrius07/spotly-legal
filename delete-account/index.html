@@ -25,17 +25,18 @@
         <li>ta photo de profil (stockage Supabase) ;</li>
         <li>ton profil et les données rattachées dans notre base (Spots, likes, sauvegardes, follows, blocages, signalements envoyés,
           données de lecture et statistiques, acceptations des règles) ;</li>
-        <li>ton compte d’authentification (email et mot de passe) : la connexion n’est plus possible.</li>
+        <li>ton compte d’authentification (email et mot de passe) : la connexion n’est plus possible ;</li>
+        <li>tes données de mesure d’audience chez PostHog : une demande d’effacement est envoyée automatiquement (voir ci-dessous).</li>
       </ul>
       <p>
         Aucune donnée d’un autre utilisateur n’est supprimée. Si une étape échoue, ton compte reste actif : relance simplement la
         suppression, elle reprend là où elle s’est arrêtée.
       </p>
       <p>
-        Les événements d’usage déjà envoyés à PostHog (mesure d’audience) ne sont pas encore supprimés automatiquement : ton
-        identifiant interne de compte est conservé dans une liste d’effacement en attente, uniquement pour pouvoir les supprimer
-        ensuite. Tu peux aussi demander cet effacement à
-        <a href="mailto:darriodarrius@gmail.com">darriodarrius@gmail.com</a>.
+        Mesure d’audience (PostHog) : la demande d’effacement de ton profil analytique, de tes événements d’usage et des éventuels
+        enregistrements de session est traitée de manière asynchrone par PostHog ; leur disparition n’est donc pas instantanée. Si
+        PostHog est temporairement indisponible, ton compte Spotly est quand même supprimé et la demande est renvoyée ultérieurement
+        (seul ton identifiant interne de compte, sans email ni nom, est conservé pour cela, jusqu’à ce que PostHog l’accepte).
         Détails dans la <a href="../privacy/">politique de confidentialité</a>.
       </p>
       <p>
