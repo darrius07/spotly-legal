@@ -54,12 +54,22 @@
       <p>
         Spotly demande l’autorisation d’accéder à ta localisation <strong>précise et approximative</strong>,
         uniquement <strong>pendant que l’application est utilisée</strong> (jamais en arrière-plan, pas de suivi de trajet,
-        pas d’historique de position). Tu peux refuser : l’application reste utilisable, avec moins de contenu local.
+        pas d’historique de position). Tu peux refuser : tu peux toujours découvrir des Spots et des lieux, avec moins de
+        contenu local, mais filmer et publier un Spot nécessite la localisation (voir ci-dessous).
       </p>
       <ul>
         <li><strong>Feed et découverte locale :</strong> ta position est envoyée à nos serveurs (Supabase) pour classer les Spots selon leur distance. Nous ne l’enregistrons pas dans notre base de données.</li>
         <li><strong>Lieux à proximité, recherche et fiches de lieux :</strong> ta position est transmise, via nos serveurs, à <strong>Google Places (Google Maps Platform)</strong> afin d’obtenir les lieux autour de toi, les résultats de recherche et les détails d’un lieu.</li>
-        <li><strong>Proximité vérifiée :</strong> au moment où tu filmes un Spot, ta position est comparée à celle du lieu, sur ton appareil. Si ta position est récente, précise et très proche du lieu, le Spot reçoit le signal « Proximité vérifiée ». Ce signal ne prouve ni une visite, ni une présence à l’intérieur du lieu, ni un achat. Nous ne conservons pas la latitude et la longitude brutes de ta position pour cette vérification ; seule la <strong>distance au lieu</strong> est conservée, et uniquement lorsque la proximité est validée. Certains Spots créés avant le 26 septembre 2026 peuvent avoir conservé une distance selon une règle antérieure.</li>
+        <li><strong>Création d’un Spot à proximité du lieu :</strong> un Spot ne peut être filmé et publié que si tu te trouves
+          à proximité du lieu (environ 50 mètres, en tenant compte de la précision du GPS). Pour le vérifier, ta position
+          précise est utilisée sur ton appareil pendant le choix du lieu et pendant la capture, puis, au moment de la
+          publication, une seule position de la capture (latitude, longitude, précision, heure, et indication de position
+          simulée) est <strong>transmise temporairement à nos serveurs (Supabase)</strong>, qui la comparent aux coordonnées
+          du lieu obtenues auprès de Google. Cette position sert uniquement à cette vérification : elle n’est
+          <strong>pas enregistrée</strong>, ni avec ton compte ni avec le Spot, n’est pas utilisée pour la mesure d’audience
+          et ne constitue aucun historique de déplacement. Seule la <strong>distance au lieu</strong> qui en résulte est
+          conservée avec le Spot. Cette vérification ne prouve ni une visite, ni une présence à l’intérieur du lieu, ni un
+          achat.</li>
         <li>Les prestataires cités ci-dessous peuvent traiter ces données dans leurs journaux techniques selon leurs propres règles.</li>
       </ul>
 
